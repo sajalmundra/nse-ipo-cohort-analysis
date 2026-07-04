@@ -19,6 +19,7 @@ cycler==0.12.1
 debugpy==1.8.21
 decorator==5.3.1
 defusedxml==0.7.1
+et_xmlfile==2.0.0
 executing==2.2.1
 fastjsonschema==2.21.2
 fonttools==4.63.0
@@ -68,6 +69,7 @@ nest-asyncio2==1.7.2
 notebook==7.6.0
 notebook_shim==0.2.4
 numpy==2.5.0
+openpyxl==3.1.5
 packaging==26.2
 pandas==3.0.3
 pandocfilters==1.5.1
@@ -89,6 +91,7 @@ pytz==2026.2
 pywinpty==3.0.5
 PyYAML==6.0.3
 pyzmq==27.1.0
+RapidFuzz==3.14.5
 referencing==0.37.0
 requests==2.34.2
 rfc3339-validator==0.1.4
