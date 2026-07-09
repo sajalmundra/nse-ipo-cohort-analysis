@@ -100,6 +100,7 @@ rfc3987-syntax==1.1.0
 rich==15.0.0
 rpds-py==2026.6.3
 scipy==1.18.0
+seaborn==0.13.2
 Send2Trash==2.1.0
 six==1.17.0
 soupsieve==2.8.4
