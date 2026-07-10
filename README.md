@@ -94,7 +94,7 @@ nse-ipo-cohort-analysis/
 | Issue | Resolution |
 |---|---|
 | Company names truncated to 21 characters for listings after 2025-08-12 (49 rows) | Fuzzy-matched on partial names; verified against listing-date proximity |
-| Filtering NSE's pool by `SERIES == 'EQ'` silently excluded valid companies under surveillance-related series (`BE`, etc.) | Removed the series filter — NSE's series reflects *current* status, not status at listing |
+| Filtering NSE's pool by `SERIES == 'EQ'` silently excluded valid companies under surveillance-related series (`BE`, etc.) | Removed the series filter  NSE's series reflects *current* status, not status at listing |
 | Hyphen-stripping in name normalization merged compound words (e.g. "Infra-EPC" → "InfraEPC"), breaking token matching | Replaced hyphens with spaces instead of deleting them |
 | 13 rows were non-IPO events: 8 REITs/InvITs, 1 delisted company (ICICI Securities), 1 merger (TCNS Clothing), 1 FPO misclassified as an IPO (Vodafone Idea), 1 post-insolvency relisting (Patanjali Foods/Ruchi Soya), 1 unresolved (Sah Polymers) | Excluded from the dataset, documented |
 | 13 rows required manual symbol overrides due to company renames or wording mismatches (e.g. Barbeque Nation Hospitality → renamed to United Foodbrands Ltd) | Hardcoded correct symbols after manual verification |
