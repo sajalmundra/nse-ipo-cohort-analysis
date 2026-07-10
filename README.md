@@ -1,11 +1,11 @@
 # NSE IPO Cohort & Performance Analysis
 
-**Do IPOs from "hot" market years underperform in the long run — and does a stock's opening-day pop actually predict anything?**
+**Do IPOs from "hot" market years underperform in the long run and does a stock's opening-day pop actually predict anything?**
 
-An end-to-end quantitative analysis of 397 NSE mainboard IPOs (2018–2025), built from raw data collection through statistical hypothesis testing, to answer two questions:
+An end-to-end quantitative analysis of 397 NSE mainboard IPOs (2018–2025), built from raw data collection through statistical hypothesis testing to answer two questions:
 
-1. **Cohort decay** — Do IPOs listed in high-volume, "frothy" years (2021 in particular) underperform IPOs from quieter years, once matched against the market?
-2. **Signal vs. noise** — Does a stock's listing-day pop % (or issue size, or investor subscription levels) predict its long-term performance, or is it a red herring?
+1. **Cohort decay** - Do IPOs listed in high-volume, "frothy" years (2021 in particular) underperform IPOs from quieter years once matched against the market?
+2. **Signal vs. noise** - Does a stock's listing-day pop % (or issue size, or investor subscription levels) predict its long-term performance or is it a red herring?
 
 `Python` · `pandas` · `SQLite` · `scipy` · `yfinance` · `matplotlib`/`seaborn`
 
@@ -13,11 +13,11 @@ An end-to-end quantitative analysis of 397 NSE mainboard IPOs (2018–2025), bui
 
 ## TL;DR
 
-- **2018 and 2021 are the only listing-year cohorts that significantly underperform the Nifty 50 at every horizon from 6 months to 3 years** (Wilcoxon signed-rank, p < 0.05 throughout). 2021's gap is worst in year one and two — and it closes by year three not because 2021 recovers, but because the rest of the market catches down to it.
-- **Listing-day hype doesn't predict returns — in the linear sense.** Pop %, issue size, and subscription levels all show statistically negligible correlation with long-term performance (Spearman r between -0.12 and +0.14).
-- **But it does predict returns non-linearly.** Split IPOs into thirds by any of these signals, and the most-hyped third is consistently the worst 3-year performer — a pattern a single correlation coefficient completely misses.
+- **2018 and 2021 are the only listing-year cohorts that significantly underperform the Nifty 50 at every horizon from 6 months to 3 years** (Wilcoxon signed-rank, p < 0.05 throughout). 2021's gap is worst in year one and two and it closes by year three not because 2021 recovers, but because the rest of the market catches down to it.
+- **Listing-day hype doesn't predict returns in the linear sense.** Pop %, issue size, and subscription levels all show statistically negligible correlation with long-term performance (Spearman r between -0.12 and +0.14).
+- **But it does predict returns non-linearly.** Split IPOs into thirds by any of these signals, and the most-hyped third is consistently the worst 3-year performer,  a pattern a single correlation coefficient completely misses.
 
-*Every return is measured relative to the Nifty 50, not in isolation — so these are findings about genuine market-relative performance, not just raw price movement.*
+*Every return is measured relative to the Nifty 50, not in isolation , so these are findings about genuine market-relative performance, not just raw price movement.*
 
 ---
 
@@ -52,8 +52,8 @@ An end-to-end quantitative analysis of 397 NSE mainboard IPOs (2018–2025), bui
 
 ## Methodology (locked decisions, applied throughout)
 
-- **Forward returns measured from listing-day close**, not issue price — keeps listing-day pop % statistically independent from long-term return calculations
-- **CAGR used for cross-horizon comparisons**, alongside raw % returns — since companies have varying amounts of elapsed trading history, CAGR allows fair comparison regardless of holding period
+- **Forward returns measured from listing-day close**, not issue price, keeps listing-day pop % statistically independent from long-term return calculations
+- **CAGR used for cross-horizon comparisons**, alongside raw % returns ,since companies have varying amounts of elapsed trading history, CAGR allows fair comparison regardless of holding period
 - **Fixed data cutoff: 2026-06-30** (not a dynamic "today") — ensures the analysis is fully reproducible on re-runs, regardless of when the pipeline is executed
 - **Nifty 50 (`^NSEI`) as benchmark** — every return is calculated both in raw terms and relative to the index, isolating genuine outperformance from broad market movement
 - **Horizon-maturity filtering** — a listing year is only included in a given horizon's comparisons if every IPO from that year has had enough time to reach it (e.g., 3-year comparisons exclude 2023–2025 cohorts). Prevents comparing fully-matured cohorts against partially-matured, listing-date-biased subsets
@@ -140,7 +140,7 @@ nse-ipo-cohort-analysis/
 
 ## Step 4: Cohort Decay Analysis (Part A)
 
-**Goal:** Do IPOs listed in "frothy" years — particularly 2021 — underperform IPOs from quieter years, over 6 months to 3 years?
+**Goal:** Do IPOs listed in "frothy" years ,particularly 2021 - underperform IPOs from quieter years, over 6 months to 3 years?
 
 - Grouped all 397 IPOs by listing year and compared median `relative_cagr` (IPO CAGR − Nifty CAGR) across four horizons, applying horizon-maturity filtering throughout
 - **Bootstrapped 95% confidence intervals** (5,000 resamples per cohort) on each cohort's median relative CAGR, to account for uneven sample sizes across listing years (ranging from 15 IPOs in 2020 to 105 in 2025)
